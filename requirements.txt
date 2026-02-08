@@ -1,0 +1,11 @@
+streamlit
+openai>=1.0.0
+python-dotenv
+pandas
+
+
+# For Google Sheets master log
+gspread
+google-auth
+google-auth-oauthlib
+google-auth-httplib2
