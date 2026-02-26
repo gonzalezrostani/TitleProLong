@@ -1,0 +1,15 @@
+name: Keep Alive
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # Runs every 60 minutes
+  workflow_dispatch:        # Allows manual trigger from GitHub UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: |
+          echo "Pinging https://title-pro.streamlit.app/ at $(date)"
+          curl -s -o /dev/null -w "HTTP status: %{http_code}\n" https://title-pro.streamlit.app/
